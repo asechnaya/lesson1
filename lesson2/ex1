@@ -1,0 +1,37 @@
+
+print ('Ex 1. Part 1')
+
+def age_func(age):
+    if age < 7:
+        print('you are in the kindergarden')
+    elif (7 <= age <= 18):
+        print('You are in a school')
+    elif (18 < age <=22):
+        print('You are a student')
+    else:
+            print('You must be working')
+
+age = int(input ('age? '));
+
+print ('Your age is', age)
+age_func(age)
+
+#
+
+print ('Ex 1. Part 2')
+
+my_string1 = input('first ');
+my_string2 = input('second ');
+
+def differing(my_string1, my_string2):
+    if (my_string1 or my_string2 == 'learn'):
+        print('answer 3')
+    elif len(my_string2) < len(my_string1):
+        print('answer 2')
+    elif len(my_string1) == len(my_string1):
+        print('answer 1')
+
+
+differing(my_string1, my_string2)
+
+

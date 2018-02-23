@@ -1,0 +1,38 @@
+
+print ('Ex 2. Part 1: Numbers')
+num_string =[4,6,18,3,6,777,2,90,40,28]
+for number in num_string:
+	number = number+1;
+	print(number)
+
+
+print ('Ex 2. Part 2: Letters')
+
+my_string='This is super'
+for letter in my_string:
+	print(letter)
+
+
+
+print ('Ex 2. Part 3: Class Marks')
+
+
+list_of_marks = [{'school_class': '4a', 'scores': [3,4,4,5,2]},
+{'school_class': '5a', 'scores': [4,4,3,5,4]},
+{'school_class': '6a', 'scores': [2,4,2,5,2]},
+{'school_class': '7a', 'scores': [3,4,4,5,3]},
+{'school_class': '8a', 'scores': [5,4,4,5,5]}]
+
+all_mean=0; #неизвестное среднее по всем классам
+
+for school_class in list_of_marks: #для всего списка
+	print(school_class['school_class'])
+	mean_class = 0;
+	for scores in school_class['scores']: #для элемента в словаре
+		n = len(school_class['scores']);
+		mean_class = (mean_class+scores)
+		mean = mean_class/n;
+	all_mean = all_mean+mean
+	print('mean mark is', mean)  #выводим под классом среднее в нем
+
+print('and all mean', all_mean)
