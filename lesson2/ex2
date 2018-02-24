@@ -39,6 +39,24 @@ print('and all mean', all_mean)
 
 
 #-----------------------------------------------
+myname=input('Input your name: ')
+def find_person(name):
+	name_list=["Вася", "Маша", "Петя", "Валера", "Саша", "Даша"];
+	i = 0;
+	while len(name_list) > 0:
+		user_name = name_list.pop();
+		if (user_name == name):
+			print(user_name, "нашелся (-лась)!")
+find_person(myname)
+#-----------------------------------------------
+
+
+
+
+
+
+
+
 user_say = input('Как дела? ')
 #def ask_user(user_say)
 while (user_say == 'Хорошо') or (user_say == 'хорошо') is False:
