@@ -8,7 +8,7 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     )
 
 def main():
-    updater = Updater("505329679:AAHrar4IKIdK8co8j_dfH6QtFAECoP5VbIw")
+    updater = Updater("505329679:AAGXnoUdQrGbJpbGCRhAgNJ8Hc6FaHDu2HQ")
     
 
     dp = updater.dispatcher #принимает входящие сообщения и посылает их куда-то
@@ -54,8 +54,8 @@ def calc(cstring):
     else:
         if cstring.endswith('='):
             try:
-                num1 = int(cstring[0])
-                num2 = int(cstring[2])  
+                num1 = float(cstring[0])
+                num2 = float(cstring[2])  
                 print(cstring)
                 if '*' in cstring:
                     ans=num1*num2
@@ -113,12 +113,15 @@ def word_count(bot, update):
     else:
         update.message.reply_text('error')     
     
-
+keyc_text=''
 def talk_to_me(bot, update):
+    global keyc_text
     user_text = update.message.text 
-    print(user_text)
-    print(bot)
-    update.message.reply_text(user_text[::-1])
+    keyc_text+=user_text
+    if user_text == "=":
+        res_calc = calc(keyc_text)
+        keyc_text = ''
+        update.message.reply_text(res_calc)
 
 def calc_keyboard(bot, update):
     #reply_markup = telegram.ReplyKeyboardRemove()
@@ -127,7 +130,7 @@ def calc_keyboard(bot, update):
     custom_keyboard = [['1', '2', '3', '+'], 
                        ['4', '5', '6', '-'],
                        ['7', '8', '9', '/'],
-                       ['#', '0', '.', '*']]
+                       ['=', '0', '.', '*']]
     reply_markup = ReplyKeyboardMarkup(custom_keyboard)
     bot.send_message(chat_id=chat_id, 
                      text="Custom Keyboard Test", 

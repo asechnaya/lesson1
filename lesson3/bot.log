@@ -1,0 +1,115 @@
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/messagehandler.py", line 169, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 119, in talk_to_me
+    keyc_text+=user_text
+UnboundLocalError: local variable 'keyc_text' referenced before assignment
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
