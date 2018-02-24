@@ -27,9 +27,9 @@ all_mean=0; #неизвестное среднее по всем классам
 
 for school_class in list_of_marks: #для всего списка
 	print(school_class['school_class'])
-	mean_class = 0;
+	mean_class = 0
 	for scores in school_class['scores']: #для элемента в словаре
-		n = len(school_class['scores']);
+		n = len(school_class['scores'])
 		mean_class = (mean_class+scores)
 		mean = mean_class/n;
 	all_mean = all_mean+mean
@@ -40,28 +40,26 @@ print('and all mean', all_mean)
 
 #-----------------------------------------------
 myname=input('Input your name: ')
+
+name_list=["Вася", "Маша", "Петя", "Валера", "Саша", "Даша"];
 def find_person(name):
-	name_list=["Вася", "Маша", "Петя", "Валера", "Саша", "Даша"];
 	i = 0;
-	while len(name_list) > 0:
-		user_name = name_list.pop();
-		if (user_name == name):
-			print(user_name, "нашелся (-лась)!")
+	if name in name_list:
+		while len(name_list) > 0:
+			user_name = name_list.pop();
+			if (user_name == name):
+				print(user_name, "нашелся (-лась)!")
+	else:
+		print('There is no name')
 find_person(myname)
 #-----------------------------------------------
 
 
-
-
-
-
-
-
 user_say = input('Как дела? ')
-#def ask_user(user_say)
-while (user_say == 'Хорошо') or (user_say == 'хорошо') is False:
-	print('У тебя не все {}!'.format(user_say))
-	user_say = input('Как дела? ')
-	if (user_say == 'Хорошо') or (user_say == 'хорошо'): 
-		print('У тебя все {}!'.format(user_say))
-#ask_user(user_say)
+def ask_user(user_say): 
+	while (user_say == 'Хорошо' or user_say == 'хорошо') is False:
+		print('У тебя не все {}!'.format(user_say))
+		user_say = input('Как дела? ')
+		if (user_say == 'Хорошо' or user_say == 'хорошо'): 
+			print('У тебя все {}!'.format(user_say))
+ask_user(user_say)

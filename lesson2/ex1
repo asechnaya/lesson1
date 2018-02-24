@@ -24,12 +24,12 @@ my_string1 = input('first ');
 my_string2 = input('second ');
 
 def differing(my_string1, my_string2):
-    if (my_string1 or my_string2 == 'learn'):
-        print('answer 3')
+    if my_string1 == my_string1:
+        print('answer 1')
     elif len(my_string2) < len(my_string1):
         print('answer 2')
-    elif len(my_string1) == len(my_string1):
-        print('answer 1')
+    elif (my_string1 or my_string2 == 'learn'):
+        print('answer 3')
 
 
 differing(my_string1, my_string2)

@@ -1,11 +1,13 @@
-name_list=["Вася", "Маша", "Петя", "Валера", "Саша", "Даша"];
+def get_answers(question, answers): 
+		if question in answers:
+			print((answers[question]).lower())
+		else: 
+			print('ой')
+		return answers
 
-#while name_list="Валера"
-i=0;
-new_name=[];
-for name in name_list:
-	while name == ("Валера"):
+while True:
 
-	name_list.pop()
-print(name_list)
-print(new_name)
+	question = input ('question??  ')
+	answers = {"привет": "И тебе привет!", "как дела": "Лучше всех", "пока": "Увидимся"}
+
+	get_answers(question, answers)
