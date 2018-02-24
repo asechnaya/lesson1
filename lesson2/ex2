@@ -36,3 +36,14 @@ for school_class in list_of_marks: #для всего списка
 	print('mean mark is', mean)  #выводим под классом среднее в нем
 
 print('and all mean', all_mean)
+
+
+#-----------------------------------------------
+user_say = input('Как дела? ')
+#def ask_user(user_say)
+while (user_say == 'Хорошо') or (user_say == 'хорошо') is False:
+	print('У тебя не все {}!'.format(user_say))
+	user_say = input('Как дела? ')
+	if (user_say == 'Хорошо') or (user_say == 'хорошо'): 
+		print('У тебя все {}!'.format(user_say))
+#ask_user(user_say)
