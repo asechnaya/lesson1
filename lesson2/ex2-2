@@ -1,0 +1,11 @@
+name_list=["Вася", "Маша", "Петя", "Валера", "Саша", "Даша"];
+
+#while name_list="Валера"
+i=0;
+new_name=[];
+for name in name_list:
+	while name == ("Валера"):
+
+	name_list.pop()
+print(name_list)
+print(new_name)
