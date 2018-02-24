@@ -1,8 +1,8 @@
 def ask_user():
     while True:
-	    ask = input('Как дела?\n')
+	    ask = input('Как дела?\n').lower()
 	    try:
-	        if (ask.lower!)='хорошо':
+	        if ask!='хорошо':
 	        	continue
 	        else:
 	            print('Ну и отлично')

@@ -1,0 +1,196 @@
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - ERROR - Error while getting Updates: Timed out
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception...
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 190, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/request.py", line 70, in request
+    **urlopen_kw)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 405, in _make_request
+    exc_cls=ReadTimeoutError)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 321, in _raise_timeout
+    raise exc_cls(*args)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=12.0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/updater.py", line 286, in _start_polling
+    allowed_updates=allowed_updates)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/bot.py", line 60, in decorator
+    result = func(self, *args, **kwargs)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/bot.py", line 1720, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 272, in post
+    **urlopen_kwargs)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 192, in _request_wrapper
+    raise TimedOut()
+telegram.error.TimedOut: Timed out
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 45, in planet
+    what_planet(planets,coord)
+NameError: name 'coord' is not defined
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 45, in planet
+    update.message.reply_text(ephem.constellation(what_planet(planets,coord)))
+NameError: name 'coord' is not defined
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 45, in planet
+    update.message.reply_text(ephem.constellation(what_planet(planets,coord)))
+NameError: name 'coord' is not defined
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 46, in planet
+    update.message.reply_text(ephem.constellation(what_planet(user_text[1], planets)))
+TypeError: you must specify a position by providing either a body or a sequence of two numeric coordinates
+telegram.ext.updater - ERROR - Error while getting Updates: Timed out
+telegram.ext.dispatcher - ERROR - No error handlers are registered, logging exception...
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 402, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 398, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 190, in _request_wrapper
+    resp = self._con_pool.request(*args, **kwargs)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/request.py", line 70, in request
+    **urlopen_kw)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/request.py", line 148, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/poolmanager.py", line 244, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 666, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/util/retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 617, in urlopen
+    chunked=chunked)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 405, in _make_request
+    exc_cls=ReadTimeoutError)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/vendor/ptb_urllib3/urllib3/connectionpool.py", line 321, in _raise_timeout
+    raise exc_cls(*args)
+telegram.vendor.ptb_urllib3.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=12.0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/updater.py", line 286, in _start_polling
+    allowed_updates=allowed_updates)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/bot.py", line 60, in decorator
+    result = func(self, *args, **kwargs)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/bot.py", line 1720, in get_updates
+    result = self._request.post(url, data, timeout=float(read_latency) + float(timeout))
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 272, in post
+    **urlopen_kwargs)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 192, in _request_wrapper
+    raise TimedOut()
+telegram.error.TimedOut: Timed out
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 46, in planet
+    if search_planet in planets:
+NameError: name 'search_planet' is not defined
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.dispatcher - ERROR - An uncaught error was raised while processing the update
+Traceback (most recent call last):
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/dispatcher.py", line 279, in process_update
+    handler.handle_update(update, self)
+  File "/home/asja/.local/lib/python3.5/site-packages/telegram/ext/commandhandler.py", line 171, in handle_update
+    return self.callback(dispatcher.bot, update, **optional_args)
+  File "bot.py", line 46, in planet
+    if search_planet in planets:
+NameError: name 'search_planet' is not defined
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
+telegram.ext.updater - WARNING - Exiting immediately!
