@@ -5,7 +5,7 @@ def get_answers(question, answers):
 			print('ой')
 		return answers
 
-while True:
+while question == "пока":
 
 	question = input ('question??  ')
 	answers = {"привет": "И тебе привет!", "как дела": "Лучше всех", "пока": "Увидимся"}
