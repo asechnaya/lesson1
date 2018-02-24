@@ -1,0 +1,12 @@
+def ask_user():
+    while True:
+	    ask = input('Как дела?\n')
+	    try:
+	        if (ask.lower!)='хорошо':
+	        	continue
+	        else:
+	            print('Ну и отлично')
+	            break
+	    except KeyboardInterrupt:
+	            return 'Прощайте'
+ask_user()
