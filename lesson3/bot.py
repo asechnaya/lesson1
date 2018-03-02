@@ -1,4 +1,4 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, BaseFilter
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 import logging
 import ephem
@@ -7,7 +7,21 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     filename='bot.log'
                     )
 
+
+class FilterCalc(BaseFilter):
+    def filter(self, message):
+        return bool(message.text or (message.text.startswith('/') and message.text.length == 1))
+
+filter_calc = FilterCalc()
+
+class FilterWordCalc(BaseFilter):
+    def filter(self, message):
+        return bool(message.text and message.text.startswith('сколько будет'))
+
+filter_word_calc = FilterWordCalc()
+
 def main():
+
     updater = Updater("505329679:AAGXnoUdQrGbJpbGCRhAgNJ8Hc6FaHDu2HQ")
     
 
@@ -20,7 +34,8 @@ def main():
     #считает слова
     dp.add_handler(CommandHandler("calc", calculator))
     dp.add_handler(CommandHandler("keycalc", calc_keyboard))
-    dp.add_handler(MessageHandler(Filters.text, talk_to_me))
+    dp.add_handler(MessageHandler(filter_word_calc, word_calc))
+    dp.add_handler(MessageHandler(filter_calc, talk_to_me))
 
     updater.start_polling() #отправь эти данные платформе телеграм
     updater.idle() #Жди, пока тебе телеграм что-то пришлет
@@ -38,6 +53,14 @@ def what_planet(planet, coord):
     else:
         print('uuuu')
 
+def whatnumber(number, nsign):
+    allsign = number
+    for key, value in nsign.items():
+        allsign = allsign.replace(key,value)
+
+    allsign += " ="
+    return allsign.replace(" ", "")
+
 def wordcounts(mystring):
     mystring=mystring.replace("/wordcount","").strip() #стрип удаляет пробелы до и после строки
     if mystring.startswith('"') and mystring.endswith('"'):
@@ -54,9 +77,15 @@ def calc(cstring):
     else:
         if cstring.endswith('='):
             try:
-                num1 = float(cstring[0])
-                num2 = float(cstring[2])  
-                print(cstring)
+                sign_and_index = getSignAndIndex(cstring)
+                print(sign_and_index)
+                sign = sign_and_index["sign"]
+                index = sign_and_index["index"]
+
+                num1 = float(cstring[:index]) #берет все то, что до индекса (не включительно) 
+                                              #https://stackoverflow.com/questions/663171/is-there-a-way-to-substring-a-string-in-python
+
+                num2 = float(cstring[index + 1: -1]) #-1  --убрать равно 
                 if '*' in cstring:
                     ans=num1*num2
                 elif '+'in cstring:
@@ -76,6 +105,29 @@ def calc(cstring):
 
     return ans
 
+def getSignAndIndex(input):
+    print(input)
+    sign = "+"
+    index = -1;
+
+    index = input.find(sign)
+    if (index != -1):
+        return {"sign":sign, "index": index}
+
+    sign = "-"
+    index = input.find(sign)
+    if (index != -1):
+        return {"sign":sign, "index": index}
+
+    sign = "/"
+    index = input.find(sign)
+    if (index != -1):
+        return {"sign":sign, "index": index}
+
+    sign = "*"
+    index = input.find(sign)
+    if (index != -1):
+        return {"sign":sign, "index": index}
 
 def calculator(bot, update):
     text = 'Вызван /calc' 
@@ -84,7 +136,35 @@ def calculator(bot, update):
     calcu = calc(user_text)
     update.message.reply_text(calcu)
     
-
+def word_calc(bot, update):  
+    text = 'Вызван /wordcalc' 
+    user_text = update.message.text
+    user_text=user_text.replace("сколько будет","").strip()
+    print("111 --"+user_text)
+    wnumbers = {
+    'один': "1",
+    'два': "2",
+    'три': "3",
+    'четыре': "4",
+    'пять': "5",
+    'шесть': "6",
+    'семь': "7",
+    'восемь': '8',
+    'девять': '9',
+    'плюс': '+',
+    'минус': '-',
+    'умножить на': '*',
+    ' и ': '.',
+    'разделить на': '/'}
+    word_numbers=whatnumber(user_text, wnumbers)
+    print('замена', word_numbers) 
+    wn = calc(word_numbers)
+    #word_numbers=word_numbers.append("=") 
+    if (wn !=0):
+        update.message.reply_text(wn)
+    else:
+        update.message.reply_text('error')    
+    
 
 def planet(bot, update):  
     text = 'Вызван /planet' 
@@ -118,6 +198,7 @@ def talk_to_me(bot, update):
     global keyc_text
     user_text = update.message.text 
     keyc_text+=user_text
+    print(keyc_text)
     if user_text == "=":
         res_calc = calc(keyc_text)
         keyc_text = ''
