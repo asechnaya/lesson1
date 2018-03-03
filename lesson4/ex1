@@ -1,0 +1,16 @@
+
+print ('Ex 2. DT')
+from datetime import datetime, date, timedelta
+#вчера
+dt = date(2018, 3, 3)
+delta = timedelta(days=1)
+dt-delta
+
+#сегодня
+dt_now = datetime.now()
+dt_now=dt_now.strftime('%Y-%m-%d')
+print(dt_now)
+
+#month ago
+dt_now=dt_now.strftime('%Y-%m-%d')
+yesterday=dt_now-delta

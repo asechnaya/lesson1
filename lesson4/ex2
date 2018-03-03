@@ -1,0 +1,8 @@
+
+print('Ex 2. DT')
+with open('referat.txt', 'r', encoding='utf-8') as f:
+    tokens = f.read().split()
+    n_tokens = len(tokens)
+with open('referat.txt', 'a', encoding='utf-8') as f:
+    f.write("\n количество слов: " + str(n_tokens))
+    print("\n количество слов: " + str(n_tokens))
