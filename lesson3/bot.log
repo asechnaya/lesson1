@@ -6742,3 +6742,5 @@ Traceback (most recent call last):
   File "/home/asja/.local/lib/python3.5/site-packages/telegram/utils/request.py", line 196, in _request_wrapper
     raise NetworkError('urllib3 HTTPError {0}'.format(error))
 telegram.error.NetworkError: urllib3 HTTPError HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot505329679:AAGXnoUdQrGbJpbGCRhAgNJ8Hc6FaHDu2HQ/getUpdates (Caused by NewConnectionError('<telegram.vendor.ptb_urllib3.urllib3.connection.VerifiedHTTPSConnection object at 0x7f29f625c978>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution',))
+telegram.ext.updater - INFO - Received signal 2 (SIGINT), stopping...
+telegram.ext.updater - WARNING - Exiting immediately!
