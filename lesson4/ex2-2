@@ -1,0 +1,14 @@
+question = 'начало  '
+def get_answers(question, answers): 
+	#while question == 'пока':
+		if question in answers:
+			print((answers[question]).lower())
+		else: 
+			print('ой')
+		return answers
+
+while question != 'пока':
+	question = input ('question??  ')
+	answers = {"привет": "И тебе привет!", "как дела": "Лучше всех", "пока": "Увидимся"}
+
+	get_answers(question, answers)

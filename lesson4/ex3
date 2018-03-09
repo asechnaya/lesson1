@@ -1,0 +1,10 @@
+answers = {"привет": "И тебе привет!", "как дела": "Лучше всех", "пока": "Увидимся"}
+
+    #get_answers(question, answers)
+
+
+import csv
+with open('answer.csv', 'w', newline='', encoding='PT154') as csvfile:
+    spamwriter = csv.writer(csvfile, delimiter=' ')
+    #spamwriter.writerow(answers.keys(),answers.values())
+    spamwriter.writerows(answers.items())
